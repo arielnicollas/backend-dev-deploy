@@ -2,10 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
-const getId = require(`../controllers/getUsersById`)
-const reqPost = require(`../controllers/postUsers`)
-const reqUpdate = require(`../controllers/updateUsers`)
-const reqDelete = require(`../controllers/deleteUsers`)
+const getId = require(`./controllers/getUsersById`)
+const reqPost = require(`./controllers/postUsers`)
+const reqUpdate = require(`./controllers/updateUsers`)
+const reqDelete = require(`./controllers/deleteUsers`)
 
 
 app.use(bodyParser.json())
