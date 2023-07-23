@@ -2,7 +2,7 @@ const connect = require(`../controllers/connection`)
 
 connect.pool
 
-const updateUsers = (req,res) => {
+const updateUsers = (req ,res) => {
     const id = parseInt(req.params.id)
     const {nome, email, telefone, cpf} = req.body
 
@@ -10,7 +10,9 @@ const updateUsers = (req,res) => {
         if (error) {
           throw error
         }
-        res.status(200).send(`Usuário atualizado com ID: ${id}`)
+        res.status(200).send({
+            message: "Dados alterados com sucesso."
+        })
     })
 }
 

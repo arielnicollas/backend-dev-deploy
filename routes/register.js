@@ -6,7 +6,7 @@ const getId = require(`../controllers/getUsersById`)
 const reqPost = require(`../controllers/postUsers`)
 const reqUpdate = require(`../controllers/updateUsers`)
 const reqDelete = require(`../controllers/deleteUsers`)
-
+const cors = require('cors');
 
 app.use(bodyParser.json())
 app.use(
@@ -14,6 +14,14 @@ app.use(
     extended: true,
   })
 )
+
+  app.use((req, res, next) => {
+      res.header("Access-Control-Allow-Origin", "*");    
+      res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+      app.use(cors());
+      next();
+});
+
 
 // app.get('/users', db.getUsers)
 app.get('/users/:id', getId.getUserById) 

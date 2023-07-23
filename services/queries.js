@@ -4,6 +4,8 @@ const getId = require(`../controllers/getUsersById`)
 const postUser = require(`../controllers/postUsers`)
 const updateUser = require(`../controllers/updateUsers`)
 const deleteUser = require(`../controllers/deleteUsers`)
+const cors = require('cors');
+
 
 connect.pool
 

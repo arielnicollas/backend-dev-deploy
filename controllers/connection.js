@@ -8,13 +8,11 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
   ssl: true
-  
 });
 
 const getConnection = pool.on('connect',() => {
     console.log('Conexão estabelecida com sucesso')
 });
-
 
 module.exports = {
     pool,
