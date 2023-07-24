@@ -9,7 +9,9 @@ const deleteUsers = (req, res) => {
         if(error){
             throw error
         }
-        res.status(200).send(`Usuário excluído: ${id}`)
+        res.status(200).send({
+            message: 'Usuário excluído:'
+        })
     })
 }
 
